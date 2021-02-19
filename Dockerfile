@@ -4,6 +4,8 @@ RUN /home/steam/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/valhe
 
 WORKDIR /home/steam/valheim/
 
-# VOLUME /home/steam/.config/unity3d/IronGate/Valheim/
+#VOLUME /home/steam/.config/unity3d/IronGate/Valheim/
 
-CMD /home/steam/valheim/start_server.sh
+COPY ./entrypoint.sh ./
+
+CMD ./entrypoint.sh
